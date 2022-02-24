@@ -41,9 +41,9 @@ public class DirCommand implements Runnable {
 
     private Comparator<File> getFileListComparator() {
         return Comparator.comparing(File::getName,
-                (s1, s2) -> Objects.equals(sortOder, "desc")
+                (s1, s2) -> Objects.equals(sortOder, "asc")
                         ? s1.compareTo(s2)
-                        : Objects.equals(sortOder, "asc") ? s2.compareTo(s1) : 0);
+                        : Objects.equals(sortOder, "desc") ? s2.compareTo(s1) : 0);
     }
 
     private void printLine(File f) {
