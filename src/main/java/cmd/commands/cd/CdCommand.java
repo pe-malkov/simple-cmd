@@ -15,12 +15,18 @@ import java.util.stream.Stream;
         mixinStandardHelpOptions = true)
 public class CdCommand implements Runnable {
 
-    @CommandLine.Parameters(index = "0", description = "path of the target directory")
+    @CommandLine.Parameters(index = "0", defaultValue = "", description = "path of the target directory")
     private File targetDir;
 
     public CdCommand() {
     }
 
     @Override
-    public void run() { SimpleCmd.setCurrentLocation(targetDir);}
+    public void run() {
+        if(targetDir.length() > 0) {
+            SimpleCmd.setCurrentLocation(targetDir);
+        } else {
+            System.out.println(SimpleCmd.getCurrentLocation().getAbsolutePath());
+        }
+    }
 }
