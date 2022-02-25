@@ -20,6 +20,8 @@ public class DirCommand implements Runnable {
     private boolean filesOnly;
     @Option(names = {"-s", "--sort"}, description = "posible values are {asc, desc}")
     private String sortOder;
+    //@Option(names = {"-S", "--short"}, description = "prints relative path")
+
 
     public DirCommand() {
     }
@@ -46,6 +48,7 @@ public class DirCommand implements Runnable {
                         : Objects.equals(sortOder, "desc") ? s2.compareTo(s1) : 0);
     }
 
+    //add else if with f.getName() for '--short' parameter
     private void printLine(File f) {
         if (filesOnly || !f.isDirectory()) {
             System.out.println(f.getAbsolutePath());
