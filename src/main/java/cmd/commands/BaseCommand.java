@@ -2,6 +2,7 @@ package cmd.commands;
 
 import cmd.commands.cd.CdCommand;
 import cmd.commands.copy.CopyCommand;
+import cmd.commands.date.DateCommand;
 import cmd.commands.del.DelCommand;
 import cmd.commands.dir.DirCommand;
 import cmd.commands.time.TimeCommand;
@@ -19,7 +20,8 @@ import picocli.CommandLine.Command;
                 DelCommand.class,
                 CopyCommand.class,
                 CdCommand.class,
-                TimeCommand.class
+                TimeCommand.class,
+                DateCommand.class
         })
 public class BaseCommand implements Runnable {
     public BaseCommand() {
